@@ -2,34 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Should I Stay or Should I go</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Should I Stay or Should I go</title>
 
     <!-- adding reset css file -->
     <!-- <link href="assets/css/reset.css" rel="stylesheet" type="text/css"> -->
 
-    <!-- BOOTSTRAP-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <!-- JAVASCRIPT  -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- BOOTSTRAP-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <!--local css-->
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <!-- JAVASCRIPT  -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Firebase References -->
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <!--local css-->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
-    <!-- moment.js-->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-    <!-- adding javascript file -->
-    <script src="assets/js/project.js"></script>
-    <script default src="assets/js/javascriptkh.js"></script>
+  <!-- moment.js-->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  <!-- adding javascript file -->
+  <script src="assets/js/project.js"></script>
+  <script src="assets/js/javascriptkh.js"></script>
+  <script src="assets/js/food.js"></script>
 </head>
 
 <body>
@@ -37,65 +38,91 @@
 <!---- H1 header of page -----> 
    <h1>Should I stay or Should I go now</h1>
 
-    <div class="form-group col-md-2">
-        <label for="inputZip">Please Enter Zipcode of the Location Desired</label>
-        <input type="text" class="form-control" id="inputZip">
-    </div>
+  <div class="form-group col-md-2">
+    <label for="inputZip">Please Enter Zipcode of the Location Desired</label>
+    <input type="text" class="form-control" id="inputZip">
   </div>
 
-<!--     <div class="flip3D"> -->
-        <!-- source code obtained from : http://www.developphp.com/video/CSS/Flip-3D-Boxes-and-Cards-Animation-CSS-Tutorial-->
-        <!-- placed in class so we can target multiple flip boxes -->
-<!--         <div class="back">SHOULD I STAY</div> -->
-        <!--end div of back-->
-<!--         <div class="front">OR SHOULD I GO</div> -->
-        <!--end div of front-->
+  <!--     <div class="flip3D"> -->
+  <!-- source code obtained from : http://www.developphp.com/video/CSS/Flip-3D-Boxes-and-Cards-Animation-CSS-Tutorial-->
+  <!-- placed in class so we can target multiple flip boxes -->
+  <!--         <div class="back">SHOULD I STAY</div> -->
+  <!--end div of back-->
+  <!--         <div class="front">OR SHOULD I GO</div> -->
+  <!--end div of front-->
 
- 
-    <div class="flip3D mx-auto">
 
-       <div class="row">
+  <div class="flip3D mx-auto">
 
-            <!-- source code obtained from : http://www.developphp.com/video/CSS/Flip-3D-Boxes-and-Cards-Animation-CSS-Tutorial-->
-            <!-- placed in class so we can target multiple flip boxes -->
+    <div class="row">
 
-            <div class="back">SHOULD I STAY</div>
-            <!--end div of back-->
-            <div class="front">OR SHOULD I GO</div>
+      <!-- source code obtained from : http://www.developphp.com/video/CSS/Flip-3D-Boxes-and-Cards-Animation-CSS-Tutorial-->
+      <!-- placed in class so we can target multiple flip boxes -->
 
-            <!-- <div class="sidenav">
+      <div class="back">SHOULD I STAY</div>
+      <!--end div of back-->
+      <div class="front">OR SHOULD I GO</div>
+
+      <!-- <div class="sidenav">
                 <a href="#about">About</a>
                 <a href="#stayIn">Stay In</a>
               <a href="#restaurants">Restaurants</a>
               <a href="#mapIt">Map IT !</a>
             </div> -->
 
-       
-    </div> <!--end div for flip3d -->
+
+    </div>
+    <!--end div for flip3d -->
 
     <div>
-       
-        Please select your food category
+
+      Please select your food category
     </div>
 
-</div> 
-      
-      <!--end div of flip3D-->
+  </div>
+  <br>
+  <!--check food types-->
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="italian" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      italian
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="mexican" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      mexican
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="burgers" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      burgers
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="pizza" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      pizza
+    </label>
+  </div>
+  <br>
+  <!--end div of flip3D-->
 
 
-    <!--Submit Button-->
+  <!--Submit Button-->
 
-    <!-- BONUS IF CAN GET MVP FIRST-->
-    <!-- <div class="sidenav">
+  <!-- BONUS IF CAN GET MVP FIRST-->
+  <!-- <div class="sidenav">
         <a href="#about">About</a>
         <a href="#stayIn">Stay In</a>
         <a href="#restaurants">Restaurants</a>
         <a href="#mapIt">Map IT !</a>
       </div> -->
 
-    <div class="submit">
-        <button class="btn btn-primary" type="button" id="button">Submit</button>
-    </div>
+  <div class="submit">
+    <button class="btn btn-primary" type="button" id="button">Submit</button>
+  </div>
 
 </body>
 
