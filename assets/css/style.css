@@ -7,7 +7,6 @@ body {
 .flip3D{ width:540px; height:200px; margin:10px; float: center; }
 
 .flip3D  .front{
-	/* position:absolute; */
 	transform: perspective( 600px ) rotateY( 0deg );
 	background:#FC0; width:540px; height:200px; border-radius: 7px;
 	backface-visibility: hidden;
