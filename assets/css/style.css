@@ -1,28 +1,32 @@
-.flip3D{ width:240px; height:200px; margin:10px; float: right; }
-.flip3D > .front{
-	position:absolute;
-	transform: perspective( 600px ) rotateY( 0deg );
-	background:#FC0; width:240px; height:200px; border-radius: 7px;
-	backface-visibility: hidden;
-	transition: transform .5s linear 0s;
-}
-.flip3D > .back{
-	position:absolute;
-	transform: perspective( 600px ) rotateY( 180deg );
-	background: #80BFFF; width:240px; height:200px; border-radius: 7px;
-	backface-visibility: hidden;
-	transition: transform .5s linear 0s;
-}
-.flip3D:hover > .front{
-	transform: perspective( 600px ) rotateY( -180deg );
-}
-.flip3D:hover > .back{
-	transform: perspective( 600px ) rotateY( 0deg );
-}
 
 body {
 	font-family: "Lato", sans-serif;
+	text-align: center;
   }
+
+.flip3D{ width:540px; height:200px; margin:10px; float: center; }
+
+.flip3D  .front{
+	transform: perspective( 600px ) rotateY( 0deg );
+	background:#FC0; width:540px; height:200px; border-radius: 7px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip3D  .back{
+	position:absolute;
+	transform: perspective( 600px ) rotateY( 180deg );
+	background: #80BFFF; width:540px; height:200px; border-radius: 7px;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip3D:hover .front{
+	transform: perspective( 600px ) rotateY( -180deg );
+}
+.flip3D:hover  .back{
+	transform: perspective( 600px ) rotateY( 0deg );
+}
+
+
   
   .sidenav {
 	height: 100%;
@@ -54,6 +58,8 @@ body {
 	padding: 0px 10px;
   }
   
+  /* used with sidenav  
+
   @media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
 	.sidenav a {font-size: 18px;}
