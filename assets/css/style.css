@@ -1,34 +1,52 @@
-
 body {
 	font-family: "Lato", sans-serif;
-	text-align: center;
-  }
+	text-align: center !important;
+}
 
-.flip3D{ width:540px; height:200px; margin:10px; float: center; }
+#inputZipCode {
+	margin-left: 700px;
+	margin-right: 700px;
+}
 
-.flip3D  .front{
-	transform: perspective( 600px ) rotateY( 0deg );
-	background:#FC0; width:540px; height:200px; border-radius: 7px;
+.flip3D {
+	width: 540px;
+	height: 200px;
+	margin: 10px;
+	float: center;
+}
+
+.flip3D .front {
+	transform: perspective(600px) rotateY(0deg);
+	background: #FC0;
+	width: 540px;
+	height: 200px;
+	border-radius: 7px;
 	backface-visibility: hidden;
 	transition: transform .5s linear 0s;
 }
-.flip3D  .back{
-	position:absolute;
-	transform: perspective( 600px ) rotateY( 180deg );
-	background: #80BFFF; width:540px; height:200px; border-radius: 7px;
+
+.flip3D .back {
+	position: absolute;
+	transform: perspective(600px) rotateY(180deg);
+	background: #80BFFF;
+	width: 540px;
+	height: 200px;
+	border-radius: 7px;
 	backface-visibility: hidden;
 	transition: transform .5s linear 0s;
 }
-.flip3D:hover .front{
-	transform: perspective( 600px ) rotateY( -180deg );
+
+.flip3D:hover .front {
+	transform: perspective(600px) rotateY(-180deg);
 }
-.flip3D:hover  .back{
-	transform: perspective( 600px ) rotateY( 0deg );
+
+.flip3D:hover .back {
+	transform: perspective(600px) rotateY(0deg);
 }
 
 
-  
-  .sidenav {
+
+.sidenav {
 	height: 100%;
 	width: 160px;
 	position: fixed;
@@ -38,27 +56,29 @@ body {
 	background-color: rgb(240, 73, 73);
 	overflow-x: hidden;
 	padding-top: 20px;
-  }
-  
-  .sidenav a {
+}
+
+.sidenav a {
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
 	font-size: 25px;
 	color: #FC0;
 	display: block;
-  }
-  
-  .sidenav a:hover {
+}
+
+.sidenav a:hover {
 	color: #f1f1f1;
-  }
-  
-  .main {
-	margin-left: 160px; /* Same as the width of the sidenav */
-	font-size: 28px; /* Increased text to enable scrolling */
+}
+
+.main {
+	margin-left: 160px;
+	/* Same as the width of the sidenav */
+	font-size: 28px;
+	/* Increased text to enable scrolling */
 	padding: 0px 10px;
-  }
-  
-  /* used with sidenav  
+}
+
+/* used with sidenav  
 
   @media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
