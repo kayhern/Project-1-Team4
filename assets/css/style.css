@@ -15,6 +15,11 @@ body {
 	float: center;
 }
 
+p {
+	margin-left: 400px;
+	margin-right: 400px;
+}
+
 .flip3D .front {
 	transform: perspective(600px) rotateY(0deg);
 	background: #FC0;
