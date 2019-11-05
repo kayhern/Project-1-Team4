@@ -1,16 +1,23 @@
 body {
-	font-family: "Lato", sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	text-align: center !important;
 }
 
 #inputZipCode {
-	margin-left: 700px;
-	margin-right: 700px;
+	margin-left: 600px;
+	margin-right: 600px;
+}
+
+h1 {
+	color: orangered;
+	background-color: darkslategrey;
+	border-width: 5px;
+	border-style: double;
 }
 
 .flip3D {
-	width: 540px;
-	height: 200px;
+	width: 300px;
+	height: 150px;
 	margin: 10px;
 	float: center;
 }
@@ -21,21 +28,23 @@ p {
 }
 
 .flip3D .front {
+	color: orangered;
 	transform: perspective(600px) rotateY(0deg);
-	background: #FC0;
-	width: 540px;
-	height: 200px;
+	background: darkslategray;
+	width: 300px;
+	height: 150px;
 	border-radius: 7px;
 	backface-visibility: hidden;
 	transition: transform .5s linear 0s;
 }
 
 .flip3D .back {
+	color: darkslategray;
 	position: absolute;
 	transform: perspective(600px) rotateY(180deg);
-	background: #80BFFF;
-	width: 540px;
-	height: 200px;
+	background: orangered;
+	width: 300px;
+	height: 150px;
 	border-radius: 7px;
 	backface-visibility: hidden;
 	transition: transform .5s linear 0s;
