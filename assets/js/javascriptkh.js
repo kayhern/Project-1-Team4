@@ -12,9 +12,12 @@ console.log("JavaScript loaded");
 // });
 $(document).ready(function () {
 
+    $(#)
     $("#button").on("click", function () {
         let zipCode = $("#inputZip").val();
         console.log(zipCode);
+        //API information for recipes should go here
+
     });
 
 });
