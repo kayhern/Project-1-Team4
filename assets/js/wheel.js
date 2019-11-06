@@ -2,46 +2,71 @@ let theWheel;
 $(document).ready(function () {
 
     console.log('Loaded JavaScript1');
-  
-  // Create new wheel object specifying the parameters at creation time.
-  theWheel = new Winwheel({
-    'numSegments'  : 8,     // Specify number of segments.
-    'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-    'textFontSize' : 28,    // Set font size as desired.
-    'segments'     :        // Define segments including colour and text.
-    [
-       {'fillStyle' : '#eae56f', 'text' : 'Prize 1'},
-       {'fillStyle' : '#89f26e', 'text' : 'Prize 2'},
-       {'fillStyle' : '#7de6ef', 'text' : 'Prize 3'},
-       {'fillStyle' : '#e7706f', 'text' : 'Prize 4'},
-       {'fillStyle' : '#eae56f', 'text' : 'Prize 5'},
-       {'fillStyle' : '#89f26e', 'text' : 'Prize 6'},
-       {'fillStyle' : '#7de6ef', 'text' : 'Prize 7'},
-       {'fillStyle' : '#e7706f', 'text' : 'Prize 8'}
-    ],
-    'animation' :           // Specify the animation to use.
-    {
-        'type'     : 'spinToStop',
-        'duration' : 5,     // Duration in seconds.
-        'spins'    : 8,     // Number of complete spins.
-        'callbackFinished' : alertPrize
-    }
-});
+
+    // Create new wheel object specifying the parameters at creation time.
+    theWheel = new Winwheel({
+        'numSegments': 5, // Specify number of segments.
+        'outerRadius': 212, // Set outer radius so wheel fits inside the background.
+        'textFontSize': 28, // Set font size as desired.
+        'segments': // Define segments including colour and text.
+            [{
+                    'fillStyle': '#eae56f',
+                    'text': 'Prize 1'
+                },
+                {
+                    'fillStyle': '#89f26e',
+                    'text': 'Prize 2'
+                },
+                {
+                    'fillStyle': '#7de6ef',
+                    'text': 'Prize 3'
+                },
+                {
+                    'fillStyle': '#e7706f',
+                    'text': 'Prize 4'
+                },
+                {
+                    'fillStyle': '#eae56f',
+                    'text': 'Prize 5'
+                },
+                {
+                    'fillStyle': '#89f26e',
+                    'text': 'Prize 6'
+                },
+                {
+                    'fillStyle': '#7de6ef',
+                    'text': 'Prize 7'
+                },
+                {
+                    'fillStyle': '#e7706f',
+                    'text': 'Prize 8'
+                }
+            ],
+        'animation': // Specify the animation to use.
+        {
+            'type': 'spinToStop',
+            'duration': 5, // Duration in seconds.
+            'spins': 8, // Number of complete spins.
+            'callbackFinished': alertPrize
+        }
+    });
+
+    console.log(foodList);
+
 
 }); // end of document.on(ready)
 
 
 
 // Vars used by the code in this page to do power controls.
-let wheelPower    = 0;
+let wheelPower = 0;
 let wheelSpinning = false;
 
 // alert(wheelSpinning);
 // -------------------------------------------------------
 // Function to handle the onClick on the power buttons.
 // -------------------------------------------------------
-function powerSelected(powerLevel)
-{
+function powerSelected(powerLevel) {
     // Ensure that power can't be changed while wheel is spinning.
     if (wheelSpinning == false) {
         // Reset all to grey incase this is not the first time the user has selected the power.
@@ -74,8 +99,7 @@ function powerSelected(powerLevel)
 // -------------------------------------------------------
 // Click handler for spin button.
 // -------------------------------------------------------
-function startSpin()
-{
+function startSpin() {
     // Ensure that spinning can't be clicked again while already running.
     if (wheelSpinning == false) {
         // Based on the power level selected adjust the number of spins for the wheel, the more times is has
@@ -104,25 +128,23 @@ function startSpin()
 // -------------------------------------------------------
 // Function for reset button.
 // -------------------------------------------------------
-function resetWheel()
-{
-    theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
-    theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
-    theWheel.draw();                // Call draw to render changes to the wheel.
+function resetWheel() {
+    theWheel.stopAnimation(false); // Stop the animation, false as param so does not call callback function.
+    theWheel.rotationAngle = 0; // Re-set the wheel angle to 0 degrees.
+    theWheel.draw(); // Call draw to render changes to the wheel.
 
-    document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
+    document.getElementById('pw1').className = ""; // Remove all colours from the power level indicators.
     document.getElementById('pw2').className = "";
     document.getElementById('pw3').className = "";
 
-    wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+    wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
 }
 
 // -------------------------------------------------------
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters
 // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
 // -------------------------------------------------------
-function alertPrize(indicatedSegment)
-{
+function alertPrize(indicatedSegment) {
     // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
     alert("You have won " + indicatedSegment.text);
 }
