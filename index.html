@@ -188,66 +188,17 @@
     <div class="submit">
       <button class="btn btn-primary" type="button" id="button">Submit</button>
     </div>
-  <!-- Placeholder for the wheel -->
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
-
-  <div align="center">
-    <!-- random wheel code-->
-
-    <p>Choose a power setting then press the Spin button. You will be alerted to the prize won when the spinning stops.
-    </p>
-    <br />
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td>
-          <div class="power_controls">
-            <br />
-            <br />
-            <table class="power" cellpadding="10" cellspacing="0">
-              <tr>
-                <th align="center">Power</th>
-              </tr>
-              <tr>
-                <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
-              </tr>
-              <tr>
-                <td align="center" id="pw2" onClick="powerSelected(2);">Med</td>
-              </tr>
-              <tr>
-                <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
-              </tr>
-            </table>
-            <br />
-            <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
-            <br /><br />
-            &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play
-              Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
-          </div>
-        </td>
-        <td width="438" height="582" class="the_wheel" align="center" valign="center">
-          <canvas id="canvas" width="434" height="434">
-            <!-- <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p> -->
-          </canvas>
-        </td>
-      </tr>
-    </table>
-  </div>
-  
-
-  <!--placeholder for getting user to see results-->
-  <div id="results"> </div>
-  <script src="assets/js/Winwheel.js"></script>
-  <script src="./assets/js/wheel.js"></script>
-=======
     <!-- Placeholder for the wheel -->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+
     <div align="center">
       <!-- random wheel code-->
 
-      <p>Choose a power setting then press the Spin button. You will be alerted to the prize won when the spinning
+      <!-- <p>Choose a power setting then press the Spin button. You will be alerted to the prize won when the spinning
         stops.
-      </p>
+      </p> -->
       <br />
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
@@ -285,11 +236,20 @@
       </table>
     </div>
 
+
     <!--placeholder for getting user to see results-->
-    <div class="submit">
-      <button class="btn btn-primary" type="button" id="button2">Get Results</button>
-    </div>
     <div id="results"> </div>
+    <script src="assets/js/Winwheel.js"></script>
+    <script src="./assets/js/wheel.js"></script>
+    =======
+    <!-- Placeholder for the wheel -->
+    <div align="center">
+      <!-- random wheel code-->
+      <!--placeholder for getting user to see results-->
+      <div class="submit">
+        <button class="btn btn-primary" type="button" id="button2">Get Results</button>
+      </div>
+      <div id="results"> </div>
 </body>
 
 </html>
