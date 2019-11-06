@@ -31,6 +31,9 @@
 // ====================================================================================================================
 function Winwheel(options, drawWheel)
 {
+
+    console.log('Loaded JavaScript2');
+    
     defaultOptions = {
         'canvasId'          : 'canvas',     // Id of the canvas which the wheel is to draw on to.
         'centerX'           : null,         // X position of the center of the wheel. The default of these are null which means will be placed in center of the canvas.
