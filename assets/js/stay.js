@@ -1,10 +1,10 @@
-var button = document.createElement("button");
-button.innerHTML = "Stay";
+var button = document.createElement("stay");
+button.innerHTML = "stay";
 
-var body = document.getElementsByTagName("body")[0];
+var body = document.getElementsByTagName("stay")[0];
 body.appendChild(button);
 
 button.addEventListener ("click", function() {
-  alert("Stay");
+  alert("stay");
 });
 
