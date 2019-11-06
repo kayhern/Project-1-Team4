@@ -1,5 +1,9 @@
 console.log("JavaScript loaded");
 
+
+// define an empty array to which to append foods
+let foodList = []
+
 // everything the zip code functionality is doing should go here
 // Setup onClick function for that button
 // Pull the zipcode value from there and do something
@@ -36,7 +40,8 @@ $(document).ready(function () {
 
 
     // define an empty array to which to append foods
-    let foodList = []
+    // let foodList = []
+
     // add event listener for clicks on checkboxes 
     $(".form-check-input").on("click", function () {
         // evaluate the "cheked" attribute of the box clicked
