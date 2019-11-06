@@ -1,4 +1,5 @@
 let theWheel;
+
 $(document).ready(function () {
 
     console.log('Loaded JavaScript1');
