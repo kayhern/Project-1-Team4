@@ -1,7 +1,10 @@
+let theWheel;
 $(document).ready(function () {
+
+    console.log('Loaded JavaScript1');
   
   // Create new wheel object specifying the parameters at creation time.
-  let theWheel = new Winwheel({
+  theWheel = new Winwheel({
     'numSegments'  : 8,     // Specify number of segments.
     'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
     'textFontSize' : 28,    // Set font size as desired.
@@ -25,10 +28,15 @@ $(document).ready(function () {
     }
 });
 
+}); // end of document.on(ready)
+
+
+
 // Vars used by the code in this page to do power controls.
 let wheelPower    = 0;
 let wheelSpinning = false;
 
+// alert(wheelSpinning);
 // -------------------------------------------------------
 // Function to handle the onClick on the power buttons.
 // -------------------------------------------------------
@@ -118,4 +126,3 @@ function alertPrize(indicatedSegment)
     // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
     alert("You have won " + indicatedSegment.text);
 }
-}); // end of document.on(ready)
