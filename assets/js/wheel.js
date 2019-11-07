@@ -1,46 +1,53 @@
 let theWheel;
 
+console.log("global" + x);
+
+
 $(document).ready(function () {
 
     console.log('Loaded JavaScript1');
 
     // Create new wheel object specifying the parameters at creation time.
     theWheel = new Winwheel({
-        'numSegments': 5, // Specify number of segments.
+        'numSegments': 9, // Specify number of segments.
         'outerRadius': 212, // Set outer radius so wheel fits inside the background.
         'textFontSize': 28, // Set font size as desired.
         'segments': // Define segments including colour and text.
             [{
-                    'fillStyle': '#eae56f',
-                    'text': 'Prize 1'
+                    'fillStyle': '#7de6ef',
+                    'text': 'Italian'
                 },
                 {
                     'fillStyle': '#89f26e',
-                    'text': 'Prize 2'
+                    'text': 'Mexican'
                 },
                 {
                     'fillStyle': '#7de6ef',
-                    'text': 'Prize 3'
+                    'text': 'Burgers'
                 },
                 {
                     'fillStyle': '#e7706f',
-                    'text': 'Prize 4'
+                    'text': 'Pizza'
                 },
                 {
                     'fillStyle': '#eae56f',
-                    'text': 'Prize 5'
+                    'text': 'Thai'
                 },
                 {
                     'fillStyle': '#89f26e',
-                    'text': 'Prize 6'
+                    'text': 'Vietnamese'
                 },
                 {
                     'fillStyle': '#7de6ef',
-                    'text': 'Prize 7'
+                    'text': 'Seafood'
                 },
                 {
                     'fillStyle': '#e7706f',
-                    'text': 'Prize 8'
+                    'text': 'Wings'
+                },
+                {
+                    'fillStyle': '#eae56f',
+                    'text': 'French'
                 }
             ],
         'animation': // Specify the animation to use.
@@ -52,7 +59,7 @@ $(document).ready(function () {
         }
     });
 
-    console.log(foodList);
+    console.log("this is in the wheel.js" , foodList);
 
 
 }); // end of document.on(ready)

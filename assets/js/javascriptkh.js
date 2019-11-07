@@ -1,15 +1,19 @@
 console.log("JavaScript loaded");
-
+let x =0;
 
 // define an empty array to which to append foods
-let foodList = []
+var foodList = [];
 
 // everything the zip code functionality is doing should go here
 // Setup onClick function for that button
 // Pull the zipcode value from there and do something
 $(document).ready(function () {
 
+   
+
     let decision = "";
+
+
 
     $("#stay").on("click", function () {
         //if the user clicks on this one it stays on this box
@@ -71,8 +75,11 @@ $(document).ready(function () {
 
 
     $("#button").on("click", function () {
+        event.preventDefault();
         let zipCode = $("#inputZip").val();
         console.log(zipCode);
+        x = foodList.length
+        console.log(x);
     });
 
     // get a result from the well
