@@ -26,9 +26,26 @@
     <!-- moment.js-->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    <!-- adding javascript file -->
-    <script src="assets/js/project.js"></script>
-    <script default src="assets/js/javascriptkh.js"></script>
+  <!--local css-->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+  <!-- reference to wheel library for random wheel -->
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+  <!-- moment.js-->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  <!-- adding javascript file -->
+  <script src="assets/js/project.js"></script>
+  <script src="assets/js/javascriptkh.js"></script>
+  <script src="assets/js/food.js"></script>
+
 </head>
 
 <body>
@@ -75,10 +92,71 @@
        
         Please select your food category
     </div>
-
-</div> 
-      
-      <!--end div of flip3D-->
+    <br>
+    <!--check food types-->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Italian" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Italian
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Mexican" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Mexican
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Burgers" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Burgers
+          </label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Pizza" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Pizza
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Thai" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Thai
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Vietnamese" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Vietnamese
+          </label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Seafood" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Seafood
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Wings" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Wings
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="French" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1" checked>
+            French
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--end div of flip3D-->
 
 
     <!--Submit Button-->
@@ -92,9 +170,71 @@
       </div> -->
 
     <div class="submit">
-        <button class="btn btn-primary" type="button" id="button">Submit</button>
+      <button class="btn btn-primary" type="button" id="button">Submit</button>
+    </div>
+    <!-- Placeholder for the wheel -->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <div align="center">
+      <!-- random wheel code-->
+
+      <!-- <p>Choose a power setting then press the Spin button. You will be alerted to the prize won when the spinning
+        stops.
+      </p> -->
+      <br />
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td>
+            <div class="power_controls">
+              <br />
+              <br />
+              <table class="power" cellpadding="10" cellspacing="0">
+                <tr>
+                  <th align="center">Power</th>
+                </tr>
+                <tr>
+                  <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
+                </tr>
+                <tr>
+                  <td align="center" id="pw2" onClick="powerSelected(2);">Med</td>
+                </tr>
+                <tr>
+                  <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
+                </tr>
+              </table>
+              <br />
+              <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
+              <br /><br />
+              &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play
+                Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
+            </div>
+          </td>
+          <td width="438" height="582" class="the_wheel" align="center" valign="center">
+            <canvas id="canvas" width="434" height="434">
+              <!-- <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p> -->
+            </canvas>
+          </td>
+        </tr>
+      </table>
+
+      <br>
     </div>
 
+
+    <!--placeholder for getting user to see results-->
+    <div id="results"> </div>
+    <script src="assets/js/Winwheel.js" defer></script>
+    <script src="./assets/js/wheel.js" defer></script>
+    <!-- Placeholder for the wheel -->
+    <div align="center">
+      <!-- random wheel code-->
+      <!--placeholder for getting user to see results-->
+      <div class="submit">
+        <button class="btn btn-primary" type="button" id="button2">Get Results</button>
+      </div>
+      <div id="results"> </div>
 </body>
 
 </html>
