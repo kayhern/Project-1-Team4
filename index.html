@@ -51,7 +51,7 @@
       out? Let us decide for you!</p>
   </div>
   <div id="inputZipCode">
-    <label for="inputZip">Please Enter Zip Code of the Location Desired</label>
+    <label for="inputZip"> Step 1: Please Enter Zip Code of the Location Desired</label>
     <input type="number" class="form-control" id="inputZip">
   </div>
   <br>
@@ -64,15 +64,17 @@
   <!--end div of front-->
 
   <div id="decision">
-
+    <p id="inputZipCode">Step 2: Choose whether or not you'd like to stay or go out. Note: There is no turning back
+      after you decide. ;)
+    </p>
     <!--flip box: https://www.w3schools.com/howto/howto_css_flip_box.asp-->
 
     <div class="flip3D mx-auto" id="stay">
       <div class="row">
-        <div class="front">
+        <div class="front" id="front">
           <div>Should I Stay?</div>
         </div>
-        <div class="back">
+        <div class="back" id="back" id="stay">
           <div>Click for Recipes</div>
         </div>
       </div>
@@ -81,9 +83,9 @@
       <div class="row">
         <!-- source code obtained from : http://www.developphp.com/video/CSS/Flip-3D-Boxes-and-Cards-Animation-CSS-Tutorial-->
         <!-- placed in class so we can target multiple flip boxes -->
-        <div class="front">Should I Go?</div>
+        <div class="front" id="go">Should I Go?</div>
         <!--end div of back-->
-        <div class="back">Click for Restaurants</div>
+        <div class="back" id="go">Click for Restaurants</div>
       </div>
 
       <!-- <div class="sidenav">
@@ -97,16 +99,14 @@
       <div class="row">
         <!-- source code obtained from : http://www.developphp.com/video/CSS/Flip-3D-Boxes-and-Cards-Animation-CSS-Tutorial-->
         <!-- placed in class so we can target multiple flip boxes -->
-        <div class="front">I Can't Decide</div>
+        <div class="front" id="random">I Can't Decide</div>
         <!--end div of back-->
-        <div class="back">Click for the Computer to Decide</div>
+        <div class="back" id="random">Click for the Computer to Decide</div>
       </div>
       <!--end div for flip3d -->
-
-      <div id="foodcategories">
-        Please select your food category
-      </div>
-
+    </div>
+    <div id="foodcategories">
+      <p id="inputZipCode"> Step 3: Please select your food category</p>
     </div>
     <br>
     <!--check food types-->
@@ -184,7 +184,6 @@
         <a href="#restaurants">Restaurants</a>
         <a href="#mapIt">Map IT !</a>
       </div> -->
-
     <div class="submit">
       <button class="btn btn-primary" type="button" id="button"><a href="#results" id="button">Submit</a></button>
     </div>
@@ -192,14 +191,10 @@
     <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
     <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
     <!--+++++++++++++++++++++++++++++++++++++++++++++++++-->
-
+    <div id="spinwheel">
+      <p id="inputZipCode"> Step 4: Spin the Wheel!</p>
+    </div>
     <div align="center">
-      <!-- random wheel code-->
-
-      <!-- <p>Choose a power setting then press the Spin button. You will be alerted to the prize won when the spinning
-        stops.
-      </p> -->
-      <br />
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td>

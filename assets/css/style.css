@@ -24,6 +24,16 @@ h1 {
 	border-style: double;
 }
 
+h2 {
+	color: orangered;
+	background-color: darkslategray;
+	opacity: .9;
+	border-radius: 7px;
+	margin-left: 500px;
+	margin-right: 500px;
+	padding: 10px;
+}
+
 .flip3D {
 	width: 300px;
 	height: 100px;
