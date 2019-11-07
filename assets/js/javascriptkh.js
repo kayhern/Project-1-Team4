@@ -1,18 +1,11 @@
 
-<<<<<<< Updated upstream
-// everything the zip code functionality is doing should go here
-
-=======
 let x =0;
 
 // define an empty array to which to append foods
 var foodList = [];
->>>>>>> Stashed changes
 
 // Setup onClick function for that button
 // Pull the zipcode value from there and do something
-<<<<<<< Updated upstream
-=======
 $(document).ready(function () {
 
    
@@ -80,13 +73,11 @@ $(document).ready(function () {
             console.log(foodList)
         }
     });
->>>>>>> Stashed changes
 
 // $("#button").on("click", function () {
 //     let zipcode = $("#inputZip");
 //     console.log('zip code:', zipcode)
 // });
-$(document).ready(function () {
 
     $("#button").on("click", function () {
         event.preventDefault();
@@ -94,6 +85,6 @@ $(document).ready(function () {
         console.log(zipCode);
         wheelSubmitted();
         // console.log("console log in button click" + foodnum);
+    
     });
-
 });
