@@ -7,8 +7,14 @@ body {
 }
 
 #inputZipCode {
-	margin-left: 600px;
-	margin-right: 600px;
+	margin-left: 500px;
+	margin-right: 500px;
+	background-color: whitesmoke;
+	opacity: .7;
+	color: black;
+	border-radius: 7px;
+	width: 600px;
+	padding: 10px;
 }
 
 h1 {
@@ -29,6 +35,13 @@ h1 {
 p {
 	margin-left: 400px;
 	margin-right: 400px;
+	height: 100px;
+	background-color: darkslategrey;
+	border-radius: 7px;
+	opacity: .9;
+	color: orangered;
+	padding: 10px;
+
 }
 
 .flip3D .front {
@@ -65,6 +78,11 @@ p {
 }
 
 #button {
+	background-color: darkslategray !important;
+	color: orangered !important;
+}
+
+#button2 {
 	background-color: darkslategray !important;
 	color: orangered !important;
 }

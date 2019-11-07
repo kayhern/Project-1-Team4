@@ -73,6 +73,7 @@ $(document).ready(function () {
     $("#button").on("click", function () {
         let zipCode = $("#inputZip").val();
         console.log(zipCode);
+
     });
 
     // get a result from the well
