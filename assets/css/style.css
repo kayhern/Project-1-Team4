@@ -101,6 +101,15 @@ p {
 	padding: 0px 10px;
 }
 
+#information {
+	background-color: maroon;
+	margin-left: 75px;
+	margin-right: 75px;
+}
+
+#inputZipCode {
+	background-color: darkred;
+}
 /* used with sidenav  
 
   @media screen and (max-height: 450px) {
