@@ -1,5 +1,7 @@
 let theWheel;
 let submittedWheel;
+let indicatedSegment;
+let food;
 
 
 $(document).ready(function () {
