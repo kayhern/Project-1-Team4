@@ -1,29 +1,34 @@
-console.log("JavaScript loaded");
 
+let x =0;
 
 // define an empty array to which to append foods
-let foodList = []
+var foodList = [];
 
-// everything the zip code functionality is doing should go here
 // Setup onClick function for that button
 // Pull the zipcode value from there and do something
 $(document).ready(function () {
 
+   
+
     let decision = "";
+
+
 
     $("#stay").on("click", function () {
         //if the user clicks on this one it stays on this box
         //if the user clicks on this one the other two disappear
         decision = "stay";
         console.log(decision)
-        $("#stay").attr();
+        $("div").remove("#go");
+        $("div").remove("#random")
     });
 
     $("#go").on("click", function () {
         //API information for going should go here or Achille's javascript file
         decision = "go";
         console.log(decision)
-        $("#go").html();
+        $("div").remove("#stay");
+        $("div").remove("#random")
     });
 
     $("#random").on("click", function () {
@@ -36,12 +41,12 @@ $(document).ready(function () {
             decision = "go";
         };
         console.log(decision)
+        $("div").remove("#stay");
+        $("div").remove("#go");
     });
-
 
     // define an empty array to which to append foods
     // let foodList = []
-
     // add event listener for clicks on checkboxes 
     $(".form-check-input").on("click", function () {
         // evaluate the "cheked" attribute of the box clicked
@@ -69,13 +74,18 @@ $(document).ready(function () {
         }
     });
 
-
+    //needed for restaurant option
     $("#button").on("click", function () {
+        event.preventDefault();
         let zipCode = $("#inputZip").val();
         console.log(zipCode);
+        wheelSubmitted();
+        // console.log("console log in button click" + foodnum);
+    
     });
 
-    // get a result from the well
+
+    // get a result from the wheel
     let food = 'wings'
 
     $("#button2").on("click", function () {
@@ -122,6 +132,9 @@ $(document).ready(function () {
             console.log("I went out")
         }
     });
+
+
+
 
 
 });

@@ -7,8 +7,14 @@ body {
 }
 
 #inputZipCode {
-	margin-left: 600px;
-	margin-right: 600px;
+	margin-left: 500px;
+	margin-right: 500px;
+	background-color: whitesmoke;
+	opacity: .7;
+	color: black;
+	border-radius: 7px;
+	width: 600px;
+	padding: 10px;
 }
 
 h1 {
@@ -16,6 +22,16 @@ h1 {
 	background-color: darkslategrey;
 	border-width: 5px;
 	border-style: double;
+}
+
+h2 {
+	color: orangered;
+	background-color: darkslategray;
+	opacity: .9;
+	border-radius: 7px;
+	margin-left: 500px;
+	margin-right: 500px;
+	padding: 10px;
 }
 
 .flip3D {
@@ -29,6 +45,13 @@ h1 {
 p {
 	margin-left: 400px;
 	margin-right: 400px;
+	height: 100px;
+	background-color: darkslategrey;
+	border-radius: 7px;
+	opacity: .9;
+	color: orangered;
+	padding: 10px;
+
 }
 
 .flip3D .front {
@@ -69,6 +92,11 @@ p {
 	color: orangered !important;
 }
 
+#button2 {
+	background-color: darkslategray !important;
+	color: orangered !important;
+}
+
 .sidenav {
 	height: 100%;
 	width: 160px;
@@ -101,15 +129,6 @@ p {
 	padding: 0px 10px;
 }
 
-#information {
-	background-color: maroon;
-	margin-left: 75px;
-	margin-right: 75px;
-}
-
-#inputZipCode {
-	background-color: darkred;
-}
 /* used with sidenav  
 
   @media screen and (max-height: 450px) {
