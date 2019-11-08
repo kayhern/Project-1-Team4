@@ -1,5 +1,4 @@
-
-let x =0;
+let x = 0;
 
 // define an empty array to which to append foods
 var foodList = [];
@@ -8,7 +7,7 @@ var foodList = [];
 // Pull the zipcode value from there and do something
 $(document).ready(function () {
 
-   
+
 
     let decision = "";
 
@@ -81,10 +80,8 @@ $(document).ready(function () {
         console.log(zipCode);
         wheelSubmitted();
         // console.log("console log in button click" + foodnum);
-    
+
     });
-
-
     // get a result from the wheel
     let food = 'wings'
 
@@ -95,7 +92,6 @@ $(document).ready(function () {
             let ingredients = ''
             let recipe_url = ''
             let portions = 0
-
             // place API request with parameter passed from the wheel
             let queryURL = "https://api.edamam.com/search?q=" + food + "&app_id=e3e6dc48&app_key=f6d299f05c0df33f37fb61c4ecf135ed&from=0&to=5"
             $.ajax({
@@ -125,7 +121,6 @@ $(document).ready(function () {
                     recipe_url = response.hits[i].recipe.url
                     console.log('url: ' + recipe_url)
                 }
-
             });
 
         } else if (decision === "go") {
