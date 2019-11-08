@@ -1,47 +1,56 @@
 let theWheel;
+let submittedWheel;
+
+
 $(document).ready(function () {
 
-    console.log('Loaded JavaScript1');
+
 
     // Create new wheel object specifying the parameters at creation time.
     theWheel = new Winwheel({
-        'numSegments': 5, // Specify number of segments.
+        'numSegments': 9, // Specify number of segments.
         'outerRadius': 212, // Set outer radius so wheel fits inside the background.
         'textFontSize': 28, // Set font size as desired.
         'segments': // Define segments including colour and text.
             [{
-                    'fillStyle': '#eae56f',
-                    'text': 'Prize 1'
-                },
-                {
-                    'fillStyle': '#89f26e',
-                    'text': 'Prize 2'
-                },
-                {
-                    'fillStyle': '#7de6ef',
-                    'text': 'Prize 3'
-                },
-                {
-                    'fillStyle': '#e7706f',
-                    'text': 'Prize 4'
-                },
-                {
-                    'fillStyle': '#eae56f',
-                    'text': 'Prize 5'
-                },
-                {
-                    'fillStyle': '#89f26e',
-                    'text': 'Prize 6'
-                },
-                {
-                    'fillStyle': '#7de6ef',
-                    'text': 'Prize 7'
-                },
-                {
-                    'fillStyle': '#e7706f',
-                    'text': 'Prize 8'
-                }
+                'fillStyle': '#7de6ef',
+                'text': 'Italian'
+            },
+            {
+
+                'fillStyle': '#89f26e',
+                'text': 'Mexican'
+            },
+            {
+                'fillStyle': '#7de6ef',
+                'text': 'Burgers'
+            },
+            {
+                'fillStyle': '#e7706f',
+                'text': 'Pizza'
+            },
+            {
+                'fillStyle': '#eae56f',
+                'text': 'Thai'
+            },
+            {
+                'fillStyle': '#89f26e',
+                'text': 'Vietnamese'
+            },
+            {
+                'fillStyle': '#7de6ef',
+                'text': 'Seafood'
+            },
+            {
+                'fillStyle': '#e7706f',
+                'text': 'Wings'
+            },
+            {
+                'fillStyle': '#eae56f',
+                'text': 'French'
+            }
             ],
+        'pins': true,
         'animation': // Specify the animation to use.
         {
             'type': 'spinToStop',
@@ -105,11 +114,14 @@ function startSpin() {
         // Based on the power level selected adjust the number of spins for the wheel, the more times is has
         // to rotate with the duration of the animation the quicker the wheel spins.
         if (wheelPower == 1) {
-            theWheel.animation.spins = 3;
+            // theWheel.animation.spins = 3;
+            submittedWheel.animation.spins=3;
         } else if (wheelPower == 2) {
-            theWheel.animation.spins = 8;
+            // theWheel.animation.spins = 8;
+            submittedWheel.animation.spins =8; 
         } else if (wheelPower == 3) {
-            theWheel.animation.spins = 15;
+            // theWheel.animation.spins = 15;
+            submittedWheel.animation.spins = 15;
         }
 
         // Disable the spin button so can't click again while wheel is spinning.
@@ -117,7 +129,8 @@ function startSpin() {
         document.getElementById('spin_button').className = "";
 
         // Begin the spin animation by calling startAnimation on the wheel object.
-        theWheel.startAnimation();
+        // theWheel.startAnimation();
+        submittedWheel.startAnimation();
 
         // Set to true so that power can't be changed and spin button re-enabled during
         // the current animation. The user will have to reset before spinning again.
@@ -137,6 +150,9 @@ function resetWheel() {
     document.getElementById('pw2').className = "";
     document.getElementById('pw3').className = "";
 
+    // clear checkbox
+    // document.getElementById('defaultCheck1').checked = false;
+
     wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
 }
 
@@ -147,4 +163,66 @@ function resetWheel() {
 function alertPrize(indicatedSegment) {
     // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
     alert("You have won " + indicatedSegment.text);
+}
+
+
+ // created new function which is implemented when we click the submit button 
+
+
+function wheelSubmitted () {
+
+    // i replaced the values of the 'text' and made them equal to the specific array elements of what is clicked in the checkboxes.
+
+submittedWheel = new Winwheel({
+    'numSegments': foodList.length, // Specify number of segments.
+    'outerRadius': 212, // Set outer radius so wheel fits inside the background.
+    'textFontSize': 28, // Set font size as desired.
+    'segments': // Define segments including colour and text.
+        [{
+            'fillStyle': '#7de6ef',
+            'text': foodList[0]
+        },
+        {
+
+            'fillStyle': '#89f26e',
+            'text': foodList[1]
+        },
+        {
+            'fillStyle': '#7de6ef',
+            'text': foodList[2]
+        },
+        {
+            'fillStyle': '#e7706f',
+            'text': foodList[3]
+        },
+        {
+            'fillStyle': '#eae56f',
+            'text': foodList[4]
+        },
+        {
+            'fillStyle': '#89f26e',
+            'text': foodList[5]
+        },
+        {
+            'fillStyle': '#7de6ef',
+            'text': foodList[6]
+        },
+        {
+            'fillStyle': '#e7706f',
+            'text': foodList[7]
+        },
+        {
+            'fillStyle': '#eae56f',
+            'text': foodList[8]
+        }
+        ],
+    'pins': true,
+    'animation': // Specify the animation to use.
+    {
+        'type': 'spinToStop',
+        'duration': 5, // Duration in seconds.
+        'spins': 8, // Number of complete spins.
+        'callbackFinished': alertPrize
+    }
+});
 }
