@@ -60,6 +60,7 @@ $(document).ready(function () {
         }
     });
 
+    console.log(foodList);
 
 
 }); // end of document.on(ready)
