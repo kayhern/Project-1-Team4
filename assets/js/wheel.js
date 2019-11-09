@@ -158,6 +158,12 @@ function resetWheel() {
     wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
 }
 
+
+function search_api(search_term) {
+    // THe search term argument gets passed to the API
+}
+
+
 // -------------------------------------------------------
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters
 // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
@@ -165,6 +171,15 @@ function resetWheel() {
 
 function alertPrize(indicatedSegment) {
     // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+    alert("You have won " + indicatedSegment.text);
+    search_api(indicatedSegment.text)
+
+}
+
+
+
+
+// created new function which is implemented when we click the submit button 
     // alert("You have won " + indicatedSegment.text);
     ​
     // console log food chosen by the wheel
@@ -178,52 +193,56 @@ function alertPrize(indicatedSegment) {
 
 function wheelSubmitted() {
 
-    // i replaced the values of the 'text' and made them equal to the specific array elements of what is clicked in the checkboxes.
-
     submittedWheel = new Winwheel({
         'numSegments': foodList.length, // Specify number of segments.
         'outerRadius': 212, // Set outer radius so wheel fits inside the background.
         'textFontSize': 28, // Set font size as desired.
         'segments': // Define segments including colour and text.
             [{
-                    'fillStyle': '#7de6ef',
-                    'text': foodList[0]
-                },
-                {
-
-                    'fillStyle': '#89f26e',
-                    'text': foodList[1]
-                },
-                {
-                    'fillStyle': '#7de6ef',
-                    'text': foodList[2]
-                },
-                {
-                    'fillStyle': '#e7706f',
-                    'text': foodList[3]
-                },
-                {
-                    'fillStyle': '#eae56f',
-                    'text': foodList[4]
-                },
-                {
-                    'fillStyle': '#89f26e',
-                    'text': foodList[5]
-                },
-                {
-                    'fillStyle': '#7de6ef',
-                    'text': foodList[6]
-                },
-                {
-                    'fillStyle': '#e7706f',
-                    'text': foodList[7]
-                },
-                {
-                    'fillStyle': '#eae56f',
-                    'text': foodList[8]
-                }
+                'fillStyle': '#7de6ef',
+                'text': foodList[0]
+            },
+            {
+                'fillStyle': '#89f26e',
+                'text': foodList[1]
+            },
+            {
+                'fillStyle': '#7de6ef',
+                'text': foodList[2]
+            },
+            {
+                'fillStyle': '#e7706f',
+                'text': foodList[3]
+            },
+            {
+                'fillStyle': '#eae56f',
+                'text': foodList[4]
+            },
+            {
+                'fillStyle': '#89f26e',
+                'text': foodList[5]
+            },
+            {
+                'fillStyle': '#7de6ef',
+                'text': foodList[6]
+            },
+            {
+                'fillStyle': '#e7706f',
+                'text': foodList[7]
+            },
+            {
+                'fillStyle': '#eae56f',
+                'text': foodList[8]
+            }
             ],
         'pins': true,
+        'pointerGuide':        // Turn pointer guide on.
+        {
+            'display': true,
+            'strokeStyle': 'red',
+            'lineWidth': 3
+        },
+      
         'animation': // Specify the animation to use.
         {
             'type': 'spinToStop',
