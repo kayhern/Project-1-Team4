@@ -56,7 +56,12 @@ $(document).ready(function () {
             'type': 'spinToStop',
             'duration': 5, // Duration in seconds.
             'spins': 8, // Number of complete spins.
-            'callbackFinished': alertPrize
+            // 'callbackFinished': alertPrize
+            // To do something after the animation has finished specify callback function.
+            'callbackFinished': 'winAnimation()',
+
+            // During the animation need to call function to re-draw triangle.
+            'callbackAfter': 'drawColourTriangle()'
         }
     });
 
@@ -146,20 +151,69 @@ function resetWheel() {
     theWheel.rotationAngle = 0; // Re-set the wheel angle to 0 degrees.
     theWheel.draw(); // Call draw to render changes to the wheel.
 
+    // submittedWheel = theWheel;
+
+    // submittedWheel.stopAnimation(false); // Stop the animation, false as param so does not call callback function.
+    // submittedWheel.rotationAngle = 0; // Re-set the wheel angle to 0 degrees.
+    // submittedWheel.draw(); // Call draw to render changes to the wheel.
+
+
     document.getElementById('pw1').className = ""; // Remove all colours from the power level indicators.
     document.getElementById('pw2').className = "";
     document.getElementById('pw3').className = "";
 
-    // clear checkbox
-    // document.getElementById('defaultCheck1').checked = false;
+    
 
     wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
 }
+
+// This function called after the spin animation has stopped.
+function winAnimation() {
+   
+
+    // Get the number of the winning segment.
+    let winningSegmentNumber = submittedWheel.getIndicatedSegmentNumber();
+
+    // Loop and set fillStyle of all segments to gray.
+    for (let x = 1; x < submittedWheel.segments.length; x++) {
+        submittedWheel.segments[x].fillStyle = 'gray';
+    }
+
+    // Make the winning one yellow.
+    submittedWheel.segments[winningSegmentNumber].fillStyle = 'yellow';
+
+    // Call draw function to render changes.
+    submittedWheel.draw();
+
+}
+
+
+
+// Draw pointer on canvas, this time on the right.
+function drawColourTriangle() {
+    // Get context used by the wheel.
+    let ctx = submittedWheel.ctx;
+
+    ctx.strokeStyle = 'navy';  // Set line colour.
+    ctx.fillStyle = 'aqua';  // Set fill colour.
+    ctx.lineWidth = 2;
+    ctx.beginPath();           // Begin path.
+
+    ctx.moveTo(390, 174);      // Move to initial position.
+    ctx.lineTo(390, 226);      // Draw lines to make the shape.
+    ctx.lineTo(360, 200);
+    ctx.lineTo(390, 175);
+    ctx.stroke();              // Complete the path by stroking (draw lines).
+    ctx.fill();
+}
+
 
 
 function search_api(search_term) {
     // THe search term argument gets passed to the API
 }
+
+
 
 
 // -------------------------------------------------------
@@ -173,11 +227,7 @@ function alertPrize(indicatedSegment) {
 
 }
 
-
-
-
 // created new function which is implemented when we click the submit button 
-
 
 function wheelSubmitted() {
 
@@ -197,11 +247,11 @@ function wheelSubmitted() {
                 'text': foodList[1]
             },
             {
-                'fillStyle': '#7de6ef',
+                'fillStyle': '#e7706f',
                 'text': foodList[2]
             },
             {
-                'fillStyle': '#e7706f',
+                'fillStyle': '#89f26e',
                 'text': foodList[3]
             },
             {
@@ -226,18 +276,24 @@ function wheelSubmitted() {
             }
             ],
         'pins': true,
-        'pointerGuide':        // Turn pointer guide on.
-        {
-            'display': true,
-            'strokeStyle': 'red',
-            'lineWidth': 3
-        },
+        // 'pointerGuide':        // Turn pointer guide on.
+        // {
+        //     'display': true,
+        //     'strokeStyle': 'red',
+        //     'lineWidth': 3
+        // },
         'animation': // Specify the animation to use.
         {
             'type': 'spinToStop',
             'duration': 5, // Duration in seconds.
             'spins': 8, // Number of complete spins.
-            'callbackFinished': alertPrize
+            // To do something after the animation has finished specify callback function.
+            'callbackFinished': 'winAnimation()',
+
+            // During the animation need to call function to re-draw triangle.
+            // 'callbackAfter': 'drawColourTriangle()'
         }
     });
+    // drawColourTriangle();
+
 }
