@@ -1,5 +1,7 @@
 let theWheel;
 let submittedWheel;
+let indicatedSegment;
+let food;
 
 
 $(document).ready(function () {
@@ -162,14 +164,14 @@ function resetWheel() {
     document.getElementById('pw2').className = "";
     document.getElementById('pw3').className = "";
 
-    
+
 
     wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
 }
 
 // This function called after the spin animation has stopped.
 function winAnimation() {
-   
+
 
     // Get the number of the winning segment.
     let winningSegmentNumber = submittedWheel.getIndicatedSegmentNumber();
@@ -220,6 +222,7 @@ function search_api(search_term) {
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters
 // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
 // -------------------------------------------------------
+
 function alertPrize(indicatedSegment) {
     // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
     alert("You have won " + indicatedSegment.text);
@@ -228,10 +231,17 @@ function alertPrize(indicatedSegment) {
 }
 
 // created new function which is implemented when we click the submit button 
+// alert("You have won " + indicatedSegment.text);
+
+// console log food chosen by the wheel
+food = indicatedSegment.text
+console.log(food);
+
+
+
+// created new function which is implemented when we click the submit button 
 
 function wheelSubmitted() {
-
-    // i replaced the values of the 'text' and made them equal to the specific array elements of what is clicked in the checkboxes.
 
     submittedWheel = new Winwheel({
         'numSegments': foodList.length, // Specify number of segments.
@@ -276,12 +286,13 @@ function wheelSubmitted() {
             }
             ],
         'pins': true,
-        // 'pointerGuide':        // Turn pointer guide on.
-        // {
-        //     'display': true,
-        //     'strokeStyle': 'red',
-        //     'lineWidth': 3
-        // },
+        'pointerGuide':        // Turn pointer guide on.
+        {
+            'display': true,
+            'strokeStyle': 'red',
+            'lineWidth': 3
+        },
+
         'animation': // Specify the animation to use.
         {
             'type': 'spinToStop',
