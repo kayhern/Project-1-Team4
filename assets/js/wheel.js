@@ -1,5 +1,7 @@
 let theWheel;
 let submittedWheel;
+let indicatedSegment;
+let food;
 
 
 $(document).ready(function () {
@@ -13,42 +15,42 @@ $(document).ready(function () {
         'textFontSize': 28, // Set font size as desired.
         'segments': // Define segments including colour and text.
             [{
-                'fillStyle': '#7de6ef',
-                'text': 'Italian'
-            },
-            {
+                    'fillStyle': '#7de6ef',
+                    'text': 'Italian'
+                },
+                {
 
-                'fillStyle': '#89f26e',
-                'text': 'Mexican'
-            },
-            {
-                'fillStyle': '#7de6ef',
-                'text': 'Burgers'
-            },
-            {
-                'fillStyle': '#e7706f',
-                'text': 'Pizza'
-            },
-            {
-                'fillStyle': '#eae56f',
-                'text': 'Thai'
-            },
-            {
-                'fillStyle': '#89f26e',
-                'text': 'Vietnamese'
-            },
-            {
-                'fillStyle': '#7de6ef',
-                'text': 'Seafood'
-            },
-            {
-                'fillStyle': '#e7706f',
-                'text': 'Wings'
-            },
-            {
-                'fillStyle': '#eae56f',
-                'text': 'French'
-            }
+                    'fillStyle': '#89f26e',
+                    'text': 'Mexican'
+                },
+                {
+                    'fillStyle': '#7de6ef',
+                    'text': 'Burgers'
+                },
+                {
+                    'fillStyle': '#e7706f',
+                    'text': 'Pizza'
+                },
+                {
+                    'fillStyle': '#eae56f',
+                    'text': 'Thai'
+                },
+                {
+                    'fillStyle': '#89f26e',
+                    'text': 'Vietnamese'
+                },
+                {
+                    'fillStyle': '#7de6ef',
+                    'text': 'Seafood'
+                },
+                {
+                    'fillStyle': '#e7706f',
+                    'text': 'Wings'
+                },
+                {
+                    'fillStyle': '#eae56f',
+                    'text': 'French'
+                }
             ],
         'pins': true,
         'animation': // Specify the animation to use.
@@ -166,6 +168,7 @@ function search_api(search_term) {
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters
 // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
 // -------------------------------------------------------
+
 function alertPrize(indicatedSegment) {
     // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
     alert("You have won " + indicatedSegment.text);
@@ -177,11 +180,18 @@ function alertPrize(indicatedSegment) {
 
 
 // created new function which is implemented when we click the submit button 
+    // alert("You have won " + indicatedSegment.text);
+    ​
+    // console log food chosen by the wheel
+    food = indicatedSegment.text
+    console.log(food);
+}
+
+
+// created new function which is implemented when we click the submit button 
 
 
 function wheelSubmitted() {
-
-    // i replaced the values of the 'text' and made them equal to the specific array elements of what is clicked in the checkboxes.
 
     submittedWheel = new Winwheel({
         'numSegments': foodList.length, // Specify number of segments.
@@ -232,6 +242,7 @@ function wheelSubmitted() {
             'strokeStyle': 'red',
             'lineWidth': 3
         },
+      
         'animation': // Specify the animation to use.
         {
             'type': 'spinToStop',
