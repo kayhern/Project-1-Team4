@@ -1,5 +1,4 @@
 
-let x =0;
 
 // define an empty array to which to append foods
 var foodList = [];
