@@ -126,6 +126,21 @@ $(document).ready(function () {
         } else if (decision === "go") {
             console.log("I went out")
         }
+
+        function displayResults() {
+            $("#results").html(label + "<br>" + recipe_url + "<br>");
+        }
+        displayResults();
+
+        function displayResults() {
+            $("#resultsrestaurants").html(label + "<br>" + recipe_url + "<br>");
+        }
+        displayResults();
+
+        function displayResults() {
+            $("#resultsrecipes").html(label + "<br>" + recipe_url + "<br>");
+        }
+        displayResults();
     });
 
 
